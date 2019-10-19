@@ -1,0 +1,65 @@
+{
+  "name": "apex-test-class-generator",
+  "displayName": "Salesforce Auto Test Class Generator",
+  "description": "Salesforce Auto Test Class Generator for Visual Studio Code",
+  "version": "1.0.0",
+  "publisher": "Nik-Creation",
+  "icon": "logo.png",
+  "keywords": [
+    "Salesforce",
+    "Apex",
+    "Apex Test",
+    "Apex Code Coverage",
+    "Apex Test Class"
+  ],
+  "engines": {
+    "vscode": "^1.39.0"
+  },
+   "repository": {
+        "type": "git",
+        "url": "https://github.com/Nik-Creation"
+    },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createTestClass"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createTestClass",
+        "title": "SFDX: Create Apex Test Class"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == apex",
+          "command": "extension.createTestClass"
+        }
+      ],
+      "explorer/context": [
+        {
+          "when": "resourceLangId == apex",
+          "command": "extension.createTestClass"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.38.0",
+    "eslint": "^5.13.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.2.1",
+    "typescript": "^3.3.1",
+    "vscode-test": "^1.0.0-next.0"
+  }
+}
